@@ -4,18 +4,16 @@ import itemData from "../data/items";
 import Header from "./Header";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [onDarkModeClick, setOnDarkModeClick] = useState(false);
   
-  const lightDark = isDarkMode
 
   function handleDarkModeClick() {
-    setIsDarkMode((isDarkMode) => !isDarkMode);
-    console.log(isDarkMode)
+    setOnDarkModeClick((isDarkMode) => !isDarkMode);
   }
 
   return (
-    <div className={"App " + (isDarkMode ? "dark" : "light")}>
-      <Header isDarkMode={handleDarkModeClick}/>
+    <div className={"App " + (onDarkModeClick ? "dark" : "light")}>
+      <Header onDarkModeClick={handleDarkModeClick} mode={onDarkModeClick}/>
       <ShoppingList items={itemData} />
     </div>
   );

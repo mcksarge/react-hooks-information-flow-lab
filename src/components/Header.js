@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Header({ isDarkMode }) {
-
+function Header({ onDarkModeClick, mode }) {
 
     
-    console.log(isDarkMode ? "dark" : "light")
+    
     return (
         <header>
           <h2>Shopster</h2>
-          <button onClick={isDarkMode}>
-            {isDarkMode} Mode
+          <button onClick={onDarkModeClick}>
+            {!mode ? "Dark" : "Light"} Mode
           </button>
         </header>
     );
